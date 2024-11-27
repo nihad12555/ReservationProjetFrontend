@@ -1,0 +1,24 @@
+<div class="ajout-salle-form">
+    <h3>Ajouter une nouvelle salle</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nom">Nom de la salle</label>
+        <input id="nom" formControlName="nom" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="capacite">Capacité</label>
+        <input id="capacite" type="number" formControlName="capacite" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="equipements">Équipements</label>
+        <input id="equipements" formControlName="equipements" class="form-control" />
+      </div>
+  
+      <button type="submit" class="btn btn-success" [disabled]="salleForm.invalid">
+        Ajouter
+      </button>
+    </form>
+  </div>
+  

@@ -1,0 +1,106 @@
+/* Conteneur principal */
+.modif-salle-form {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    border-radius: 12px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Poppins', sans-serif;
+    color: #4a4a4a;
+  }
+  
+  /* Titre */
+  .modif-salle-form .form-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Groupes de champs */
+  .modif-salle-form .form-group {
+    margin-bottom: 20px;
+  }
+  
+  /* Étiquettes */
+  .modif-salle-form .form-label {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #34495e;
+  }
+  
+  /* Champs de formulaire */
+  .modif-salle-form .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .modif-salle-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0px 4px 8px rgba(52, 152, 219, 0.2);
+    outline: none;
+  }
+  
+  /* Boutons */
+  .modif-salle-form .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  .modif-salle-form .btn {
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 48%;
+  }
+  
+  .modif-salle-form .btn-primary {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    border: none;
+  }
+  
+  .modif-salle-form .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(106, 17, 203, 0.4);
+  }
+  
+  .modif-salle-form .btn-secondary {
+    background: #95a5a6;
+    border: none;
+  }
+  
+  .modif-salle-form .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 15px rgba(149, 165, 166, 0.4);
+  }
+  
+  .modif-salle-form .btn:disabled {
+    background: #ddd;
+    color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  /* Placeholder et focus */
+  .modif-salle-form .form-control::placeholder {
+    color: #ccc;
+    font-style: italic;
+  }
+  
+  .modif-salle-form .form-control:focus::placeholder {
+    color: transparent;
+  }
+  

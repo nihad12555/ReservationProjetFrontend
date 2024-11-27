@@ -1,0 +1,209 @@
+/* Conteneur principal du calendrier */
+full-calendar {
+  display: block;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #fafafa;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+}
+
+/* Global styles pour le FullCalendar */
+.fc {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  color: #444;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 0;
+}
+
+/* Styles de la barre d'outils */
+.fc-toolbar {
+  background-color: #1e2a3a;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.fc-toolbar-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* Boutons de navigation (précédent, suivant) */
+.fc-button {
+  background-color: #3498db;
+  color: white;
+  font-size: 14px;
+  padding: 8px 16px;
+  margin: 0 6px;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.fc-button:hover {
+  background-color: #2980b9;
+  cursor: pointer;
+  transform: translateY(-2px);
+}
+
+.fc-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+/* Styles des jours du calendrier */
+.fc-day {
+  padding: 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.fc-day.fc-day-today {
+  background-color: #3498db;
+  color: white;
+}
+
+.fc-day.fc-day-other-month {
+  background-color: #f9f9f9;
+}
+
+.fc-day-number {
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.fc-day:hover {
+  background-color: #ecf0f1;
+  cursor: pointer;
+}
+
+.fc-day.fc-day-today:hover {
+  background-color: #2980b9;
+}
+
+/* Styles des événements */
+.fc-event {
+  background-color: #e67e22;
+  color: white;
+  padding: 8px;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.fc-event:hover {
+  background-color: #d35400;
+  transform: translateY(-2px);
+}
+
+.fc-event.fc-event-selected {
+  background-color: #c0392b;
+}
+
+.fc-event-tooltip {
+  background-color: #2c3e50;
+  color: white;
+  font-size: 13px;
+  padding: 6px 12px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Vue agenda - ajustements pour une meilleure lisibilité */
+.fc-time-grid-event {
+  background-color: #f39c12;
+  color: white;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.fc-time-grid-event:hover {
+  background-color: #e67e22;
+}
+
+.fc-time-grid-event.fc-event-selected {
+  background-color: #d35400;
+}
+
+/* Cacher les week-ends dans la vue agenda */
+.fc-view-container .fc-day-sun, .fc-view-container .fc-day-sat {
+  display: none;
+}
+
+/* Vue mensuelle - ajuster l’apparence des jours */
+.fc-view-month .fc-day {
+  background-color: #f9f9f9;
+  border: 1px solid #ececec;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.fc-day.fc-day-other-month {
+  opacity: 0.6;
+}
+
+.fc-day.fc-day-today {
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+}
+
+/* Personnalisation de l’interface de l’agenda */
+.fc-view-day .fc-time-grid-container {
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #ecf0f1;
+}
+
+.fc-day.fc-day-today {
+  background-color: #2980b9;
+  color: white;
+}
+
+/* Marges et transitions de la vue complète */
+.fc-view-month .fc-day {
+  border: 1px solid #ececec;
+  background-color: #f7f7f7;
+}
+
+.fc-day.fc-day-sun,
+.fc-day.fc-day-sat {
+  background-color: #ecf0f1;
+}
+
+/* Ajouter des transitions subtiles lors de la sélection d'un événement */
+.fc-event.fc-event-selected {
+  background-color: #c0392b;
+  transition: background-color 0.3s ease;
+}
+
+/* Style pour les événements du calendrier */
+.fc-day-grid-event {
+  font-size: 14px;
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.fc-day-grid-event:hover {
+  background-color: #f39c12;
+  transform: translateY(-2px);
+}
+
+
+
+  

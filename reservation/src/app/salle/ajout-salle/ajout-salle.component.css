@@ -1,0 +1,80 @@
+/* Conteneur du formulaire */
+.ajout-salle-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1);
+    font-family: 'Roboto', sans-serif;
+    color: #4a4a4a;
+  }
+  
+  /* Titre */
+  .ajout-salle-form h3 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 20px;
+  }
+  
+  /* Labels */
+  .ajout-salle-form .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #34495e;
+  }
+  
+  /* Inputs */
+  .ajout-salle-form .form-control {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .ajout-salle-form .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0px 0px 6px rgba(52, 152, 219, 0.3);
+    outline: none;
+  }
+  
+  /* Bouton */
+  .ajout-salle-form .btn-success {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #28a745;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(40, 167, 69, 0.3);
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  }
+  
+  .ajout-salle-form .btn-success:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(40, 167, 69, 0.4);
+  }
+  
+  .ajout-salle-form .btn-success:disabled {
+    background-color: #c3e6cb;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* Espacement entre les champs */
+  .ajout-salle-form .form-group {
+    margin-bottom: 20px;
+  }
+  

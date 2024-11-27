@@ -1,0 +1,27 @@
+<div class="modif-salle-form">
+    <h3>Modifier la salle</h3>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="nom">Nom de la salle</label>
+        <input id="nom" formControlName="nom" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="capacite">Capacité</label>
+        <input id="capacite" type="number" formControlName="capacite" class="form-control" />
+      </div>
+  
+      <div class="form-group">
+        <label for="equipements">Équipements</label>
+        <input id="equipements" formControlName="equipements" class="form-control" />
+      </div>
+  
+      <button type="submit" class="btn btn-success" [disabled]="modifSalleForm.invalid">
+        Sauvegarder les modifications
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="modifSalleForm.reset()">
+        Annuler
+      </button>
+    </form>
+  </div>
+  

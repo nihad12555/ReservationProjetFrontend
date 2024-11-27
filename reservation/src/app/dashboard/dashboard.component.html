@@ -1,0 +1,40 @@
+<div class="dashboard-container">
+    <div class="row">
+      <!-- Widget : Statistiques des salles -->
+      <div class="col-md-4 col-sm-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Salles disponibles</h5>
+            <p class="card-text">{{ salleStats.available }} disponibles</p>
+            <p class="card-text">{{ salleStats.occupied }} occupées</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Widget : Réservations -->
+      <div class="col-md-4 col-sm-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Réservations</h5>
+            <p class="card-text">Aujourd'hui : {{ reservationStats.today }}</p>
+            <p class="card-text">Total : {{ reservationStats.total }}</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Widget : Dernières activités -->
+      <div class="col-md-4 col-sm-12 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Activités récentes</h5>
+            <ul class="list-group">
+              <li *ngFor="let activity of recentActivities" class="list-group-item">
+                {{ activity }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
