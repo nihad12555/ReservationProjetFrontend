@@ -4,6 +4,7 @@ import { CalendarOptions } from '@fullcalendar/core';
 import dayGridPlugin from '@fullcalendar/daygrid';  // Plugin pour l'affichage en grille mensuelle
 import interactionPlugin from '@fullcalendar/interaction'; 
 import timeGridPlugin from '@fullcalendar/timegrid'; // Plugin pou
+import { ReservationService } from '../Service/Reservation/Reservation.service';
 
 @Component({
   selector: 'app-reservation',
@@ -23,30 +24,29 @@ export class ReservationComponent implements OnInit{
     eventClick: this.handleEventClick.bind(this), // Gère le clic sur un événement
   };
 
-  constructor() {}
+  constructor(private reservationService: ReservationService) {}
 
   ngOnInit() {
     this.loadReservations();
   }
 
-  loadReservations() {
-    // Charger les réservations existantes
-    //this.reservationService.getReservations().subscribe((reservations) => {
-      //this.calendarOptions.events = reservations.map((reservation) => ({
-       // id: reservation.id,
-       // title: `Salle ${reservation.roomId}`,
-       // start: reservation.startTime,
-       // end: reservation.endTime,
-      //}));
-    //});
+loadReservations() {
+    this.reservationService.getReservations().subscribe((reservations) => {
+      this.calendarOptions.events = reservations.map((reservation) => ({
+        id: reservation.id,
+        title: `Salle ${reservation.roomId}`,
+        start: reservation.startTime,
+        end: reservation.endTime,
+      }));
+    });
   }
 
   handleDateSelect(selectionInfo: any) {
-    /*const title = prompt('Entrez le numéro de salle pour réserver :');
+    const title = prompt('Entrez le numéro de salle pour réserver :');
     if (title) {
       const reservation = {
         roomId: Number(title),
-        userId: 1, // Id de l'utilisateur connecté
+        userId: 1, 
         startTime: selectionInfo.startStr,
         endTime: selectionInfo.endStr,
       };
@@ -58,11 +58,11 @@ export class ReservationComponent implements OnInit{
         },
         (error) => alert('Erreur lors de la réservation')
       );
-    }*/
+    }
   }
 
   handleEventClick(clickInfo: any) {
-    /*if (confirm('Voulez-vous annuler cette réservation ?')) {
+    if (confirm('Voulez-vous annuler cette réservation ?')) {
       const reservationId = clickInfo.event.id;
       this.reservationService.cancelReservation(reservationId).subscribe(
         () => {
@@ -71,7 +71,7 @@ export class ReservationComponent implements OnInit{
         },
         (error) => alert('Erreur lors de l\'annulation')
       );
-    }*/
+    }
   }
   }
 

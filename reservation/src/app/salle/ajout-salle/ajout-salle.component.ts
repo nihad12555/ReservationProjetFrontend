@@ -12,7 +12,6 @@ import { SalleAjoutDTO } from '../../DTO/SalleDTO';
 export class AjoutSalleComponent {
   @Output() salleAjoutee = new EventEmitter<SalleAjoutDTO>(); // Événement pour transmettre la nouvelle salle au parent
   salleForm!: FormGroup;
-
   constructor(private fb: FormBuilder) {
     this.salleForm = this.fb.group({
       nom: ['', Validators.required],

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { AuthService } from '../Service/Auth/Auth.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-navbar',
   standalone: true,
@@ -8,8 +9,19 @@ import { Component } from '@angular/core';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  
+constructor(private AuthService: AuthService,private router:Router) {}
+
+goToReservation() {
+  this.router.navigate(['/reservation']);
+}
+goToSalle() {
+  this.router.navigate(['/salles']);
+}
+
 logout() {
-throw new Error('Method not implemented.');
+  this.AuthService.logout();
 }
 
 }

@@ -16,11 +16,11 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <!-- Lien vers la page Salle -->
           <li class="nav-item">
-            <a class="nav-link" routerLink="/salle" routerLinkActive="active">Salle</a>
+            <a class="nav-link" (click)="goToSalle()" routerLinkActive="active">Salle</a>
           </li>
           <!-- Lien vers la page Réservation -->
           <li class="nav-item">
-            <a class="nav-link" routerLink="/reservation" routerLinkActive="active">Réservation</a>
+            <a class="nav-link" (click)="goToReservation()" routerLinkActive="active">Réservation</a>
           </li>
         </ul>
         <!-- Bouton Logout -->

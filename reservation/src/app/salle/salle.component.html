@@ -1,28 +1,46 @@
 <div class="salles-container">
-    <h2>Liste des salles</h2>
-    <button class="btn btn-info" (click)="onSalleAjoutee()">Ajouter</button>
+  <h2>Liste des salles</h2>
 
-  
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Nom</th>
-          <th>Capacité</th>
-          <th>Équipements</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let salle of salles">
-          <td>{{ salle.nom }}</td>
-          <td>{{ salle.capacite }}</td>
-          <td>{{ salle.equipements }}</td>
-          <td>
-            <button class="btn btn-info" (click)="onModifierSalle(salle)">Modifier</button>
-            <button (click)="deleteSalle(salle.id)" class="btn btn-danger">Supprimer</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  
+  <!-- Bouton pour afficher le formulaire d'ajout -->
+  <button class="btn btn-info" (click)="showAjoutForm = !showAjoutForm">
+    {{ showAjoutForm ? 'Annuler' : 'Ajouter une salle' }}
+  </button>
+
+  <!-- Formulaire d'ajout -->
+  <app-ajout-salle
+    *ngIf="showAjoutForm"
+    (salleAjoutee)="onSalleAjoutee($event)">
+  </app-ajout-salle>
+
+  <!-- Affichage des erreurs -->
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <!-- Liste des salles -->
+  <table class="table" *ngIf="salles.length > 0; else noSalles">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Capacité</th>
+        <th>Équipements</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let salle of salles">
+        <td>{{ salle.nom }}</td>
+        <td>{{ salle.capacite }}</td>
+        <td>{{ salle.equipements }}</td>
+        <td>
+          <button class="btn btn-info" (click)="onModifierSalle(salle)">Modifier</button>
+          <button class="btn btn-danger" (click)="deleteSalle(salle.id)">Supprimer</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Message si aucune salle -->
+  <ng-template #noSalles>
+    <p>Aucune salle disponible.</p>
+  </ng-template>
+</div>
+
