@@ -27,23 +27,28 @@ import { Router } from '@angular/router';
     }
   
     onSubmit() {
-    if (this.password !== this.confirmPassword) {
+      if (this.password !== this.confirmPassword) {
         this.errorMessage = 'Les mots de passe ne correspondent pas.';
         this.successMessage = '';
         return;
-    }
-
-    // Appel direct avec les propriétés liées au modèle
-    this.authService.register({
+      }
+    
+      // Appel direct avec les propriétés liées au modèle
+      this.authService.register({
         name: this.name,
         email: this.email,
         password: this.password,
         confirmPassword: this.confirmPassword,
-    }).subscribe({
+      }).subscribe({
         next: (user) => {
-            this.successMessage = `Compte créé avec succès pour ${user.name}.`;
-            this.errorMessage = '';
-            console.log('Utilisateur enregistré:', user);
+          this.successMessage = `Compte créé avec succès pour ${user.name}.`;
+          this.errorMessage = '';
+          console.log('Utilisateur enregistré:', user);
+    
+          // Redirection vers la page de connexion
+          
+          this.router.navigate(['/login']);
+          
         },
         error: (error) => {
           this.errorMessage = "Échec de l'inscription. Veuillez réessayer.";
@@ -52,6 +57,7 @@ import { Router } from '@angular/router';
         },
       });
     }
+    
   }
   
 
